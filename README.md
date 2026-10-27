@@ -1,4 +1,4 @@
-# nuckty-ext-command-convert-images
+# @nuckty/ext-command-convert-images
 
 > **Encode content images to AVIF and WebP — the `convert-images` command.**
 
@@ -23,11 +23,10 @@ nuckty convert-images [contentDir] [--dry-run] [--force]
 3. Encode WebP from the original until it is smaller. Encode AVIF from the original, with the size of the new WebP as the target, or the original size when no WebP was produced. Omit a variant that cannot be smaller even at quality 1.
 4. Record sizes and completion in `convert-images.json` at the scan root. Save that file and the variants in version control yourself when required.
 
-Run from the configured site root and pass the content directory: `npx nuckty convert-images external/content`.
+Run from the configured site root and pass the content directory: `npx @nuckty/core convert-images external/content`.
 
 ## Why a separate step
 
 `nuckty build` copies prepared variants into the artifact without invoking sharp. Run encoding separately when images change. Like `content-external`, this is an explicit step that prepares build inputs.
 
 Invalid cache data and PNG/JPEG sources sharing an output basename stop the command before any writes. Repair or remove an invalid cache, or rename a colliding source, then retry. Each variant is encoded into a unique temporary sibling and replaces the previous output only after success. An encoder error preserves previous outputs and leaves the hash eligible for retry; a successful WebP may remain when AVIF fails. A completed conversion that cannot beat the size target is cached without that variant. `--dry-run` never modifies files, including on errors.
-

@@ -1,5 +1,5 @@
 {
-    "name": "nuckty-ext-command-convert-images",
+    "name": "@nuckty/ext-command-convert-images",
     "version": "1.0.0-beta1",
     "license": "MIT",
     "repository": {
@@ -7,7 +7,8 @@
         "url": "git@github.com:nuckty/nuckty-ext-command-convert-images.git"
     },
     "publishConfig": {
-        "registry": "https://registry.npmjs.org"
+        "registry": "https://registry.npmjs.org",
+        "access": "public"
     },
     "description": "nuckty command-extension: encode content PNG/JPEG to AVIF and WebP via sharp",
     "type": "module",
@@ -27,16 +28,15 @@
     },
     "devDependencies": {
         "@types/node": "24.13.3",
-        "nuckty": "file:../nuckty",
+        "@nuckty/core": "file:../nuckty",
         "tsx": "4.23.12",
         "typescript": "7.0.2"
     },
     "peerDependencies": {
-        "nuckty": "1.0.0-beta1"
+        "@nuckty/core": "1.0.0-beta1"
     },
     "author": {
         "name": "Vitaly Harisov",
         "email": "vitaly@harisov.name"
     }
 }
-

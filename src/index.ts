@@ -1,5 +1,5 @@
 /**
- * nuckty-ext-command-convert-images — `nuckty convert-images` command-extension.
+ * @nuckty/ext-command-convert-images — `nuckty convert-images` command-extension.
  *
  * Registers the `convert-images` CLI command: encode content PNG/JPEG to AVIF
  * and WebP siblings via sharp. WebP targets the original size; AVIF targets
@@ -8,14 +8,14 @@
  * Projects may version the cache and variants for reuse after cloning; the
  * command does not commit them. sharp belongs to this extension, not the core.
  *
- * @module nuckty-ext-command-convert-images
+ * @module @nuckty/ext-command-convert-images
  */
 
 import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import fsp from 'node:fs/promises';
 import process from 'node:process';
-import type { NucktyEnv, CommandArgs } from 'nuckty';
+import type { NucktyEnv, CommandArgs } from '@nuckty/core';
 
 import {
     scanImageFiles,
@@ -301,4 +301,3 @@ export function register(env: NucktyEnv): void {
 }
 
 export default register;
-
