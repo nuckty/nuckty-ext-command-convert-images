@@ -1,6 +1,6 @@
 {
     "name": "@nuckty/ext-command-convert-images",
-    "version": "1.0.0-beta2",
+    "version": "1.0.0-beta3",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -33,7 +33,7 @@
         "typescript": "7.0.2"
     },
     "peerDependencies": {
-        "@nuckty/core": "1.0.0-beta2"
+        "@nuckty/core": "1.0.0-beta3"
     },
     "author": {
         "name": "Vitaly Harisov",
